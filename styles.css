@@ -1,0 +1,388 @@
+/* Default styles for larger screens */
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #40ff00;
+    font-weight: bold;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: #40ff00;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+header {
+    background: #000000;
+    color: #40ff00;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.header-buttons {
+    display: flex;
+    margin-left: auto;}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: #40ff00;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu-icon {
+    display: none; /* Initially hide the menu icon */
+    cursor: pointer;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.cta-buttons {
+    display: flex;
+}
+
+.cta-button {
+    background-color: #40ff00;
+    color: rgb(5, 0, 0);
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('hero-background.jpg') center/cover no-repeat;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.event-details {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero .button {
+    background: #40ff00;
+    color: black;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.countdown h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+}
+
+.countdown-timer-item {
+    margin: 0 10px;
+}
+
+.countdown-timer-item span {
+    display: block;
+    font-size: 2em;
+}
+
+.countdown .button {
+    background: #40ff00;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+
+#slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    width: 100%; /* Ensure slides take full width */
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflowing content */
+  }
+
+  .slide img {
+    width: 100%; /* Make images take 100% of the slide width */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove extra spacing below the images */
+  }
+
+  .radio-buttons {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .radio-button {
+    margin: 0 5px;
+  }
+
+  #prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+/* Styles for smaller screens (mobile view) */
+/* Existing CSS styles (as provided in the previous responses) */
+
+/* New styles for mobile view */
+@media screen and (max-width: 768px) {
+      header {
+        flex-direction: column; /* Stack elements vertically in mobile view */
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust the top position as needed */
+        left: 0;
+        width: 100%;
+        background: #000000;
+        transform: translateY(-100%); /* Initially off-screen */
+        transition: transform 0.5s ease; /* Add a slide-in transition */
+    }
+
+    nav.show {
+        transform: translateY(0); /* Slide in the navigation links */
+    }
+
+    nav ul {
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+        opacity: 0; /* Initially hidden */
+        transform: translateY(20px); /* Slide in from bottom */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Add fade-in transition */
+    }
+
+    nav.show li:nth-child(1) {
+        opacity: 1; /* Fade in the first navigation link when the menu icon is clicked */
+        transform: translateY(0); /* Slide in from bottom */
+    }
+
+    nav.show li:nth-child(2) {
+        transition-delay: 0.2s; /* Delay the second navigation link */
+        opacity: 1; /* Fade in the second navigation link when the menu icon is clicked */
+        transform: translateY(0); /* Slide in from bottom */
+    }
+
+    nav.show li:nth-child(3) {
+        transition-delay: 0.4s; /* Delay the third navigation link */
+        opacity: 1; /* Fade in the third navigation link when the menu icon is clicked */
+        transform: translateY(0); /* Slide in from bottom */
+    }
+
+    nav.show li:nth-child(4) {
+        transition-delay: 0.6s; /* Delay the fourth navigation link */
+        opacity: 1; /* Fade in the fourth navigation link when the menu icon is clicked */
+        transform: translateY(0); /* Slide in from bottom */
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon in mobile mode */
+        font-size: 1.5em;
+        cursor: pointer;
+        animation: pulse 1.5s infinite; /* Add a pulsating animation */
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    nav ul li {
+        margin: 0;
+    }
+
+    .cta-buttons {
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .event-details {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hero .button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .countdown h2 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .countdown-timer-item span {
+        font-size: 1.5em;
+    }
+
+    .countdown .button {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+
+    #slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+      }
+  
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+  
+      .slide {
+        width: 100%; /* Ensure slides take full width */
+        box-sizing: border-box;
+        overflow: hidden; /* Hide overflowing content */
+      }
+  
+      .slide img {
+        width: 100%; /* Make images take 100% of the slide width */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Remove extra spacing below the images */
+      }
+  
+      .radio-buttons {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+      }
+  
+      .radio-button {
+        margin: 0 5px;
+      }
+  
+      #prev, #next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        cursor: pointer;
+      }
+  
+      #prev { left: 10px; }
+      #next { right: 10px; }
+}

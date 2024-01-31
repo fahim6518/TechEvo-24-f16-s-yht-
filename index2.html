@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Use a relative path for the CSS file -->
+    <title>Your Hackathon</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Conduct</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <a href="#" class="button">Register</a>
+        </div>
+        <div class="menu-icon" onclick="toggleNav()">
+            &#9776; <!-- Unicode character for the menu icon (three horizontal lines) -->
+        </div>
+    </header>
+
+<!-- ... (remaining HTML code) ... -->
+
+<script>
+    function toggleNav() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('show');
+    }
+</script>
+
+
+	<div id="slider-container">
+		<div class="slider">
+		  <div class="slide"><img src="slide1.jpeg" alt="Slide 1"></div>
+		  <div class="slide"><img src="slide2.jpg" alt="Slide 2"></div>
+		  <div class="slide"><img src="slide3.jpg" alt="Slide 3"></div>
+		  <!-- Add more slides as needed -->
+		</div>
+		
+		<div class="radio-buttons">
+		  <input type="radio" name="slide" class="radio-button" id="radio1" checked>
+		  <input type="radio" name="slide" class="radio-button" id="radio2">
+		  <input type="radio" name="slide" class="radio-button" id="radio3">
+		  <!-- Add more radio buttons as needed -->
+		</div>
+		
+		<button id="prev" onclick="prevSlide()">&#10094;</button>
+		<button id="next" onclick="nextSlide()">&#10095;</button>
+	  </div>
+    <script src="slideshow.js"></script>
+    <script src="countdown.js"></script>
+        
+        <!-- Add more slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+	<section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Hackathon Name</h1>
+                <p>A Coding Extravaganza for Innovators</p>
+                <p class="event-details">Date: 5th March- 6th March, 2024 | Venue: Aalim Muhammed Salegh College of Engineerign </p>
+			
+                <a href="#register" class="button">Register Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="countdown" style="background: #000000; color: #40ff00;">
+        <div class="container">
+            <h2>Countdown to the Event</h2>
+            <div id="countdown-timer"></div>
+        </div>
+    </section>
+
+	
+
+</body>
+</html>
